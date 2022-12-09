@@ -1,0 +1,1 @@
+# rametta-partytown-amplitude-react
