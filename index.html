@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amplitude Partytown React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Set type to text/partytown so the browser ignores it but partytown will find it and load it in a worker -->
+    <script type="text/partytown">
+      // Copied from https://www.docs.developers.amplitude.com/data/sdks/typescript-browser/#use-script-loader
+      !function(e,t){var r=e.amplitude||{_q:[],_iq:[]};if(r.invoked)e.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{var n=function(e,t){e.prototype[t]=function(){return this._q.push({name:t,args:Array.prototype.slice.call(arguments,0)}),this}},s=function(e,t,r){e[t]=function(){if(r){var n,s,i;return{promise:new Promise((n=e,s=t,i=Array.prototype.slice.call(arguments),function(e){n._q.push({name:s,args:Array.prototype.slice.call(i,0),resolve:e})}))}}}},i=function(e){for(var t=0;t<f.length;t++)s(e,f[t],!1);for(var r=0;r<g.length;r++)s(e,g[r],!0)};r.invoked=!0;var o=t.createElement("script");o.type="text/javascript",o.integrity="sha384-GHWzi7MsT/TD3t0f+KUaVeuvPUsuVgdUKegrAWlzO4I83+klmUJna8WTuUunlsg6",o.crossOrigin="anonymous",o.async=!0,o.src="https://cdn.amplitude.com/libs/analytics-browser-1.6.6-min.js.gz",o.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")};var a=t.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a);for(var u=function(){return this._q=[],this},p=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove","getUserProperties",],c=0;c<p.length;c++)n(u,p[c]);r.Identify=u;for(var l=function(){return this._q=[],this},d=["getEventProperties","setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties",],v=0;v<d.length;v++)n(l,d[v]);r.Revenue=l;var f=["getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset",],g=["init","add","remove","track","logEvent","identify","groupIdentify","setGroup","revenue","flush",];i(r),r.createInstance=function(){var e=r._iq.push({_q:[]})-1;return i(r._iq[e]),r._iq[e]},e.amplitude=r}}(window,document);
+
+      amplitude.init("YOUR_API_KEY_HERE");
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
